@@ -4,14 +4,20 @@ FROM python:3.9
 # Set working directory inside the container
 WORKDIR /app
 
-# Copy dependencies and install
-COPY requirements.txt .
+# Copy dependencies first (better for caching layers)
+fastapi
+uvicorn
+boto3
+scikit-learn
+
+
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the entire project
+# Copy the entire project (including `app/` folder)
 
 
-# Expose API port
+# Expose the API port
 EXPOSE 8000
 
 # Run FastAPI server
