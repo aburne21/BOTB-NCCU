@@ -1,3 +1,5 @@
+python --version
+pip --version
 # BOTB-NCCU
 gh auth login
 import boto3
