@@ -1,5 +1,6 @@
 python --version
 pip --version
+pip install boto3 scikit-learn
 # BOTB-NCCU
 gh auth login
 import boto3
